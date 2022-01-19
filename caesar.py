@@ -10,7 +10,10 @@ def encrypt(key,plaintext):
 def decrypt(key,ciphertext):
     plaintext=""
     #YOUR CODE HERE
-    plaintext = encrypt(26 - key, ciphertext)
+#     plaintext = encrypt(26 - key, ciphertext)
+    for i in range(len(plaintext)):
+        l = plaintext[i]
+        ciphertext += chr((ord(l) - key - 65) % 26 + 65)
     return plaintext
 
 
