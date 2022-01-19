@@ -13,7 +13,7 @@ def decrypt(key,ciphertext):
 #     plaintext = encrypt(26 - key, ciphertext)
     for i in range(len(plaintext)):
         l = plaintext[i]
-        ciphertext += chr((ord(l) - key - 65) % 26 + 65)
+        ciphertext += chr((ord(l) + 26 - key - 65) % 26 + 65)
     return plaintext
 
 
