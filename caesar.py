@@ -10,7 +10,7 @@ def encrypt(key,plaintext):
 def decrypt(key,ciphertext):
     plaintext=""
     #YOUR CODE HERE
-    plaintext = encrypt(key - 26, ciphertext)
+    plaintext = encrypt(26 - key, ciphertext)
     return plaintext
 
 
