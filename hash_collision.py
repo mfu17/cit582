@@ -12,23 +12,23 @@ def hash_collision(k):
     #Collision finding code goes here
     x = b'\x00'
     y = b'\x00'
-    print(k)
+    #print(k)
     
     x = os.urandom(64)
     x_hex = hashlib.sha256(x).hexdigest()
     x_hex_as_binary = bin(int(x_hex, 16))
     target = x_hex_as_binary[-k:]
-    print(target)
+    #print(target)
     
     y = os.urandom(64)
     y_hex = hashlib.sha256(y).hexdigest()
     y_hex_as_binary = bin(int(y_hex, 16))
-    print(y_hex_as_binary[-k:])
+    #print(y_hex_as_binary[-k:])
     while y_hex_as_binary[-k:] != target:
         y = os.urandom(64)
         y_hex = hashlib.sha256(y).hexdigest()
         y_hex_as_binary = bin(int(y_hex, 16))     
-    print(y_hex_as_binary[-k:])
+    #print(y_hex_as_binary[-k:])
     return( x, y )
 
 
