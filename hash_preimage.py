@@ -7,7 +7,7 @@ def hash_preimage(target_string):
         return
     nonce = b'\x00'
 
-    print(target_string)
+    #print(target_string)
     len_target = len(target_string)
 
     nonce = os.urandom(64)
@@ -18,7 +18,7 @@ def hash_preimage(target_string):
         nonce = os.urandom(64)
         nonce_hex = hashlib.sha256(nonce).hexdigest()
         nonce_hex_as_binary = bin(int(nonce_hex, 16))  
-    print(nonce_hex_as_binary)
+    #print(nonce_hex_as_binary)
     
     return( nonce )
 
