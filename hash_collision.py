@@ -28,8 +28,7 @@ def hash_collision(k):
         y = os.urandom(64)
         y_hex = hashlib.sha256(y).hexdigest()
         y_hex_as_binary = bin(int(y_hex, 16))     
-        print(y_hex_as_binary[-k:])
-
+    print(y_hex_as_binary[-k:])
     return( x, y )
 
 
