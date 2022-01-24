@@ -13,10 +13,13 @@ def hash_collision(k):
     x = b'\x00'
     y = b'\x00'
 
+    print(k)
+    
     x = os.urandom(64)
     x_hex = hashlib.sha256(x).hexdigest()
     x_hex_as_binary = bin(int(x_hex, 16))
     target = x_hex_as_binary[-k:]
+    print(x)
     print(target)
     
     y = os.urandom(64)
@@ -27,6 +30,7 @@ def hash_collision(k):
         y_hex = hashlib.sha256(x).hexdigest()
         y_hex_as_binary = bin(int(x_hex, 16))       
 
+    print(y)
     return( x, y )
 
 
