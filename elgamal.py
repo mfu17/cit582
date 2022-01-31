@@ -3,7 +3,7 @@ import random
 from params import p
 from params import g
 
-
+print("sth")
 
 def keygen():
     sk = 0
