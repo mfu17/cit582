@@ -3,12 +3,12 @@ import random
 from params import p
 from params import g
 
-q = (p-1)/2
+
 
 def keygen():
     sk = 0
     pk = 0
-
+    q = (p-1)/2
     sk = random.SystemRandom().randint(1,q)
     pk = pow(g, sk) % p
     print("keygen")
@@ -17,7 +17,7 @@ def keygen():
 def encrypt(pk,m):
     c1 = 0
     c2 = 0
-
+    q = (p-1)/2
     r = random.SystemRandom().randint(1,q)
     c1 = pow(g, r) % p
     c2 = (pow(pk, r) * m) % p
