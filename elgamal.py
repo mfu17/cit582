@@ -22,10 +22,10 @@ def encrypt(pk,m):
     print("encrypt")
     return [c1,c2]
 
-# def decrypt(sk,c):
-#     m = 0
+def decrypt(sk,c):
+    m = 0
     
-#     m = (c[1] / pow(c[0], sk)) % p
-#     print("decrypt")
-#     return m
+    m = (c[1] / pow(c[0], sk)) % p
+    print("decrypt")
+    return m
 
