@@ -19,7 +19,7 @@ def keygen():
     print("keygen1")
     sk = random.SystemRandom().randint(1,q)
     print(sk)
-    pk = pow(g, sk) % p
+    pk = pow(g, sk, p)
     print(pk)
     print("keygen")
     return pk,sk
