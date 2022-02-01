@@ -12,9 +12,9 @@ def sign(m):
 #	G = ecdsa.secp256k1
 #	n = G.order()
 	#d = random.SystemRandom().randint(1,n)
-	#fastecdsa.keys.gen_keypair(secp256k1)
-	d = gen_private_key(secp256k1)
-	public_key = d * secp256k1.G
+	(d, public_key) = gen_keypair(secp256k1)
+# 	d = gen_private_key(secp256k1)
+# 	public_key = d * secp256k1.G
 
 	#generate signature
 	#Your code here
