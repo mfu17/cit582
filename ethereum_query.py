@@ -44,7 +44,7 @@ def get_most_expensive_transaction(block_num):
     #curr_cost = -1
     txs = w3.eth.get_block(block_num)['transactions']
     for tx in txs:
-        curr_cost = get_transaction_cost(tx)
+        cur_cost = get_transaction_cost(tx)
         if cur_cost > max_cost:
             max_tx = tx
             max_cost = cur_cost
