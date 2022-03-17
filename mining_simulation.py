@@ -57,7 +57,7 @@ def Simulate(alpha,gamma,N, seed):
               SelfishRevenue += 1
 
             else:
-
+              SelfishRevenue += 0
 
         elif state==2:
             #The selfish pool has 2 hidden block.
