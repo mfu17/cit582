@@ -13,7 +13,7 @@ def verify():
     content = request.get_json(silent=True)
 
     payload = content.get('payload')
-    payload_str = json.dums(payload)
+    payload_str = json.dumps(payload)
     sig = content.get('sig')
     pk = payload.get('pk')
     platform = payload.get('platform')
