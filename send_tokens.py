@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+# #!/usr/bin/python3
 
 from algosdk.v2client import algod
 from algosdk import mnemonic
@@ -28,7 +28,7 @@ def send_tokens( receiver_pk, tx_amount ):
     sender_pk = mnemonic.to_public_key(mnemonic_secret)
 
     tx = transaction.PaymentTxn(sender_pk, tx_fee, first_valid_round, last_valid_round, gen_hash, receiver_pk, tx_amount)
-    signed_tx = tx.sign(sender_pk)
+    signed_tx = tx.sign(sender_sk)
     tx_confirm = acl.send_transaction(signed_tx)
     txid = signed_tx.transaction.get_txid()
 
@@ -53,10 +53,9 @@ def wait_for_confirmation(client, txid):
 # from algosdk import account
 # my_pk, account_1 = account.generate_account()
 # mnemonic_secret = mnemonic.from_private_key(my_pk)
-# sender_pk = mnemonic.to_private_key(mnemonic_secret)
+# sender_pk = mnemonic.to_public_key(mnemonic_secret)
 
 # print("my_pk: " + my_pk)
 # print("account_1: " + account_1)
 # print("mnemonic_secret: " + mnemonic_secret)
 # print("sender_pk: " + sender_pk)
-
