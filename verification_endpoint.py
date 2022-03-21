@@ -18,7 +18,7 @@ def verify():
     pk = payload.get('pk')
     platform = payload.get('platform')
 
-    if platform == 'Algoland':
+    if platform == 'Algorand':
         result = algosdk.util.verify_bytes(payload_str.encode('utf-8'), sig, pk)
     elif platform == 'Ethereum':
         eth_encoded_msg = eth_account.messages.encode_defunct(text=payload_str)
