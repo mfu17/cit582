@@ -9,11 +9,11 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 def match_order(new_order, old_order):
-    cond1 = new_order.filled == None
-    cond2 = new_order.sell_currency == old_order.buy_currency
-    cond3 = new_order.buy_currency == old_order.sell_currency
-    cond4 = ((new_order.sell_amount * old_order.sell_amount) >= (new_order.buy_amount * old_order.buy_amount))
-    return (cond1 & cond2 & cond3 & cond4) 
+    con_1 = new_order.filled == None
+    con_2 = new_order.sell_currency == old_order.buy_currency
+    con_3 = new_order.buy_currency == old_order.sell_currency
+    con_4 = ((new_order.sell_amount * old_order.sell_amount) >= (new_order.buy_amount * old_order.buy_amount))
+    return (con_1 & con_2 & con_3 & con_4) 
 
 def process_order(order):
     #Your code here
