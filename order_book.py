@@ -43,9 +43,9 @@ def process_order(order):
     session.add(new_order)
     session.commit()
     
-    unfilled_orders = session.query(Order).filter(Order.filled == None).all()
+    unfilled = session.query(Order).filter(Order.filled == None).all()
     
-    for old_order in unfilled_orders:
+    for old_order in unfilled:
         if match_order(new_order, old_order):
             
             old_order.filled = datetime.now()
