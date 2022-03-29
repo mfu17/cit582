@@ -62,7 +62,7 @@ def process_order(order):
                     child_order['buy_currency'] = new_order.buy_currency
                     child_order['sell_currency'] = new_order.sell_currency
                     child_order['buy_amount'] = new_order.buy_amount - old_order.sell_amount
-                    child_order['sell_amount'] = child_order['buy_amount'] * (new_order.sell_amount / new_order.buy_amount)*1.1
+                    child_order['sell_amount'] = child_order['buy_amount'] * (new_order.sell_amount / new_order.buy_amount)*1.01
                     child_order['sender_pk'] = new_order.sender_pk
                     child_order['receiver_pk'] = new_order.receiver_pk
                     child_order['creator_id'] = new_order.id
@@ -71,7 +71,7 @@ def process_order(order):
                     child_order['buy_currency'] = old_order.buy_currency
                     child_order['sell_currency'] = old_order.sell_currency
                     child_order['sell_amount'] = old_order.sell_amount - new_order.buy_amount
-                    child_order['buy_amount'] = child_order['sell_amount'] * (old_order.buy_amount / old_order.sell_amount)*0.9
+                    child_order['buy_amount'] = child_order['sell_amount'] * (old_order.buy_amount / old_order.sell_amount)*0.99
                     child_order['sender_pk'] = old_order.sender_pk
                     child_order['receiver_pk'] = old_order.receiver_pk
                     child_order['creator_id'] = old_order.id
