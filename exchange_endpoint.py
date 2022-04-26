@@ -6,6 +6,14 @@ import json
 import eth_account
 import algosdk
 from sqlalchemy.orm import sessionmaker
+from flask import Flask, request, g
+from flask_restful import Resource, Api
+from sqlalchemy import create_engine
+from flask import jsonify
+import json
+import eth_account
+import algosdk
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 from sqlalchemy.orm import load_only
 from datetime import datetime
@@ -185,7 +193,7 @@ def get_algo_keys():
     # TODO: Generate or read (using the mnemonic secret) 
     # the algorand public/private keys
     # fund here
-    mnemonic_secret = 'monkey seed matter social panther soda amazing often honey fall denial bring combine donor concert step law among write bronze jazz smile stage ability cross'
+    mnemonic_secret = 'minor agree actor parrot still turn piece wide divide expand appear charge advice discover pitch milk work judge exchange lonely noise tragic layer ability excuse'
     algo_sk = mnemonic.to_private_key(mnemonic_secret)
     algo_pk = mnemonic.to_public_key(mnemonic_secret)
     
@@ -198,7 +206,7 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     
     with open(filename,'r') as file:
         mnemonic = file.read().strip()
-    mnemonic = 'arrange youth please bracket gas honey matrix empower web boat hour key'
+    mnemonic = 'oblige trick bullet denial utility hat door road point version dial warfare'
     eth_account.Account.enable_unaudited_hdwallet_features()
     #acct,mnemonic_secret = w3.eth.account.create_with_mnemonic()
     #print(mnemonic_secret)
@@ -247,7 +255,7 @@ def execute_txes(txes):
     
     g.session.add_all(algo_txes)
     g.session.add_all(eth_txes)
-    g.session.commit()  
+    g.session.commit()   
 
 """ End of Helper methods"""
   
